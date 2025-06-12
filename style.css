@@ -1,0 +1,97 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(270deg, #ffb6c1, #ff69b4);
+    background-size: 400% 400%;
+    animation: gradienteAnimado 3s infinite alternate ease-in-out;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+/* Animação do gradiente */
+@keyframes gradienteAnimado {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Adicionando imagem de fundo com opacidade */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://cdn.pixabay.com/photo/2019/01/02/02/37/background-3907905_1280.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; /* Ajuste a opacidade para deixar o gradiente visível */
+    z-index: -1;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 3em;
+    font-family: 'Great Vibes', cursive; /* Fonte manuscrita mais elegante */
+    color: #ffffff; /* Mantendo um tom claro */
+    text-shadow: 4px 4px 15px rgba(255, 105, 180, 1); /* Sombra suave rosa */
+    padding: 10px;
+}
+
+.foto-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.foto-romantica {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 2px solid white; /* Adiciona contorno */
+}
+
+.mensagem {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.contador-container {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 1450px;
+    font-size: 2.5em; /* Fonte maior para destaque */
+    font-weight: bold;
+    color: #ff0055;
+    font-family: 'Playfair Display', serif; /* Mantendo estilo elegante */
+    text-shadow: 3px 3px 8px rgba(255, 255, 255, 0.6); /* Sombra suave */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Adiciona uma borda discreta */
+    box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.4); /* Sombra externa para destaque */
+}
+
+@media (max-width: 768px) {
+    .contador-container {
+        max-width: 90%;
+    }
+}
