@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Playfair Display', serif;
     background: linear-gradient(270deg, #ffb6c1, #ff69b4);
@@ -7,27 +13,23 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
     position: relative;
 }
 
 /* Animação do gradiente */
 @keyframes gradienteAnimado {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
-/* Adicionando imagem de fundo com opacidade */
+/* Imagem de fundo */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -35,7 +37,7 @@ body::before {
     background-image: url(https://cdn.pixabay.com/photo/2019/01/02/02/37/background-3907905_1280.jpg);
     background-size: cover;
     background-position: center;
-    opacity: 0.4; /* Ajuste a opacidade para deixar o gradiente visível */
+    opacity: 0.4;
     z-index: -1;
 }
 
@@ -43,15 +45,16 @@ body::before {
     background: rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     max-width: 600px;
+    margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 3em;
-    font-family: 'Great Vibes', cursive; /* Fonte manuscrita mais elegante */
-    color: #ffffff; /* Mantendo um tom claro */
-    text-shadow: 4px 4px 15px rgba(255, 105, 180, 1); /* Sombra suave rosa */
+    font-size: 2.5em;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    text-shadow: 4px 4px 15px rgba(255, 105, 180, 1);
     padding: 10px;
 }
 
@@ -65,33 +68,68 @@ h1 {
     width: 100%;
     max-width: 300px;
     border-radius: 10px;
-    border: 2px solid white; /* Adiciona contorno */
+    border: 2px solid white;
 }
 
 .mensagem {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-style: italic;
     margin-top: 10px;
+    padding: 0 10px;
 }
 
 .contador-container {
     background: rgba(255, 255, 255, 0.3);
     padding: 20px;
     border-radius: 15px;
-    margin-top: 20px;
-    width: 80%;
-    max-width: 1450px;
-    font-size: 2.5em; /* Fonte maior para destaque */
+    width: 100%;
+    max-width: 1300px;
+    font-size: 2em;
     font-weight: bold;
     color: #ff0055;
-    font-family: 'Playfair Display', serif; /* Mantendo estilo elegante */
-    text-shadow: 3px 3px 8px rgba(255, 255, 255, 0.6); /* Sombra suave */
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Adiciona uma borda discreta */
-    box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.4); /* Sombra externa para destaque */
+    font-family: 'Playfair Display', serif;
+    text-shadow: 3px 3px 8px rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.4);
+    word-wrap: break-word;
 }
 
+/* Responsividade para tablets e celulares */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .mensagem {
+        font-size: 1em;
+    }
+
     .contador-container {
+        font-size: 1.4em;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container,
+    .contador-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .mensagem {
+        font-size: 1em;
+    }
+
+    .foto-romantica {
         max-width: 90%;
+    }
+
+    .contador-container {
+        font-size: 1.2em;
     }
 }
